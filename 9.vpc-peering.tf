@@ -3,9 +3,9 @@ data "aws_vpc" "ansible_vpc" {
 }
 
 data "aws_route_table" "ansible_vpc_rt" {
-  subnet_id = "subnet-00e784c9d98f52559"
+  # subnet_id = "subnet-00e784c9d98f52559"
   #If subnet_id giving errors use route table id as below
-  # route_table_id = data.aws_route_table.ansible_vpc_rt.id
+  route_table_id = "rtb-046dc7baed57b3fe5"
 }
 
 resource "aws_vpc_peering_connection" "ansible-vpc-peering" {
