@@ -3,6 +3,9 @@
   hosts: testserver01
   become: true
   tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
     - name: Install Redis dependencies
       apt:
         name: "{{ item }}"
